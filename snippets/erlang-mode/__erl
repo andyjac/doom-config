@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Erlang template
+# key: __.erl
+# --
+-module(`(downcase (file-name-base buffer-file-name))`).
+
+%% API
+-export([]).
+
+$0
