@@ -3,32 +3,14 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;; BEGIN PERSONAL CONFIGURATION ;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; code:
+(setq fancy-splash-image "~/.doom.d/icons/doom3.iconset/icon_256x256.png")
 
+(load! "elisp/lsp")
+(load! "elisp/javascript")
+(load! "elisp/keybindings")
 (load! "elisp/c")
 (load! "elisp/css")
-(load! "elisp/file-templates")
-(load! "elisp/functions")
-(load! "elisp/javascript")
-(load! "elisp/json")
-(load! "elisp/keybindings")
-(load! "elisp/lsp")
-(load! "elisp/org")
-
-;; TODO find a better way to supress warnings when setting these variables via `.dir-locals.el' file.
-;; Ensure `flycheck-javascript-eslint-executable' can be set safely inside of `mesa' project dirs
-(setq safe-local-variable-values
-      '((flycheck-javascript-eslint-executable . "~/code/igneous/mesa/ux/node_modules/.bin/eslint")
-        (flycheck-javascript-eslint-executable . "")))
-
-;; Make the scratch buffer default to `org-mode' major mode.
-(setq doom-scratch-buffer-major-mode 'org-mode)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;; END PERSONAL CONFIGURATION ;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -45,13 +27,15 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 14))
+;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq doom-font (font-spec :family "Triplicate T4" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-city-lights)
+;; (setq doom-theme 'doom-henna)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -65,7 +49,7 @@
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package' for configuring packages
+;; - `use-package!' for configuring packages
 ;; - `after!' for running code after a package has loaded
 ;; - `add-load-path!' for adding directories to the `load-path', relative to
 ;;   this file. Emacs searches the `load-path' when you load packages with
@@ -73,8 +57,8 @@
 ;; - `map!' for binding new keys
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
 ;; This will open documentation for it, including demos of how they are used.
 ;;
-;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
+;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
